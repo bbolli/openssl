@@ -22,5 +22,6 @@ jobs:
       run: |
         gcc -v
         cat cpp.add >>Makefile
+        make build_generated
         make crypto/asn1/a_mbstr.i
         grep -n -B5 UNICODE_ crypto/asn1/a_mbstr.i
