@@ -19,6 +19,8 @@ jobs:
     - name: config
       run: ./config --strict-warnings && perl configdata.pm --dump
     - name: make
-      run: gcc -v; make -j4
-    - name: make test
-      run: make test HARNESS_JOBS=${HARNESS_JOBS:-4}
+      run: |
+        gcc -v
+        cat cpp.add >>Makefile
+        make crypto/asn1/a_mbstr.i
+        grep -n -B5 UNICODE_ crypto/asn1/a_mbstr.i
