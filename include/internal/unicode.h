@@ -11,8 +11,10 @@
 # define OSSL_INTERNAL_UNICODE_H
 # pragma once
 
-static const unsigned long UNICODE_MAX = 0x10ffff;
-static const unsigned long UNICODE_LIMIT = UNICODE_MAX + 1;
+enum UNICODE_constants {
+    UNICODE_MAX = 0x10ffffUL,
+    UNICODE_LIMIT
+};
 
 static inline int is_unicode_surrogate(unsigned long value)
 {
